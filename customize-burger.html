@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="header-footer.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+<body>
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+          <div class="flex items-center gap-3">
+              <img src="cofee.jpg" alt="Logo" class="h-12 w-12 rounded-full object-cover">
+              <div class="flex flex-col leading-tight">
+                  <span class="font-playfair text-[#c8a856] font-semibold text-sm md:text-base">CAFE</span>
+                  <span class="font-playfair text-[#c8a856] font-extrabold text-lg md:text-xl">VERDE BITES</span>
+              </div>
+          </div>
+      
+          <ul class="nav-links hidden md:flex gap-10">
+              <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-house text-white text-xl"></i>
+                  <a href="index.html" class="text-white font-medium">Home</a>
+              </li>
+      
+              <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+                  <a href="order.html" class="text-white font-medium">Orders</a>
+              </li>
+      
+              <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-utensils text-white text-xl"></i>
+                  <a href="menu.html" class="text-white font-medium">Menu</a>
+              </li>
+      
+              <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-phone text-white text-xl"></i>
+                  <a href="contact.html" class="text-white font-medium">Contact</a>
+              </li>
+          </ul>
+      
+          <div class="hamburger md:hidden flex flex-col cursor-pointer" id="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </nav>
+      
+      <!-- MOBILE MENU -->
+      <ul id="mobile-menu" class="flex flex-col gap-6 text-white text-lg">
+          <li class="flex items-center gap-3">
+              <i class="fa-solid fa-house text-white text-xl"></i>
+              <a href="index.html">Home</a>
+          </li>
+      
+          <li class="flex items-center gap-3">
+              <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+              <a href="order.html">Orders</a>
+          </li>
+      
+          <li class="flex items-center gap-3">
+              <i class="fa-solid fa-utensils text-white text-xl"></i>
+              <a href="menu.html">Menu</a>
+          </li>
+      
+          <li class="flex items-center gap-3">
+              <i class="fa-solid fa-phone text-white text-xl"></i>
+              <a href="contact.html">Contact</a>
+          </li>
+      </ul>
+  <!-- INTERACTIVE CUSTOMIZE BURGER SECTION -->
+<section class="customize-section">
+  <div class="customize-header">
+      <h2><i class="fas fa-hamburger"></i> Customize Your Burger</h2>
+      <p>Create your perfect burger exactly the way you like it!</p>
+  </div>
+
+  <div class="customize-container">
+      <form>
+          <!-- Burger Base -->
+          <div class="customize-group">
+              <label>Burger Base</label>
+              <select>
+                  <option>Classic Veg</option>
+                  <option>Spicy Chicken</option>
+                  <option>Beef Supreme</option>
+              </select>
+          </div>
+
+          <!-- Cheese & Toppings -->
+          <div class="customize-group">
+              <label>Cheese & Toppings</label>
+              <div class="checkbox-group">
+                  <label><input type="checkbox" value="Cheddar"> Cheddar</label>
+                  <label><input type="checkbox" value="Mozzarella"> Mozzarella</label>
+                  <label><input type="checkbox" value="Lettuce"> Lettuce</label>
+                  <label><input type="checkbox" value="Tomato"> Tomato</label>
+                  <label><input type="checkbox" value="Bacon"> Bacon</label>
+                  <label><input type="checkbox" value="Onion Rings"> Onion Rings</label>
+              </div>
+          </div>
+
+          <!-- Sauce -->
+          <div class="customize-group">
+              <label>Sauce</label>
+              <select>
+                  <option>Classic Mayo</option>
+                  <option>Spicy Mayo</option>
+                  <option>BBQ Sauce</option>
+                  <option>Special House Sauce</option>
+              </select>
+          </div>
+
+          <!-- Quantity -->
+          <div class="customize-group">
+              <label>Quantity</label>
+              <input type="number" min="1" value="1">
+          </div>
+
+          <a href="add-to-cart.html"><button class="btn-add"><i class="fas fa-cart-plus"></i> Add to Cart</button></a>
+      </form>
+  </div>
+</section>
+
+
+<footer id="contact">
+  <div class="footer-container">
+      <div class="footer-content">
+          <div class="footer-section">
+              <h3>Contact Us</h3>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Gourmet Street, Food City, FC 10001</p>
+              <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+              <p><i class="fas fa-envelope"></i> info@cafevibe.com</p>
+              <p><i class="fas fa-clock"></i> Mon-Fri: 11am-10pm, Sat-Sun: 10am-11pm</p>
+              <div class="social-icons">
+                  <a href="https://wa.me/918764841243"><i class="fab fa-whatsapp"></i></a>
+                  <a href="https://www.instagram.com/rajkumawat.305?igsh=YzM5czQ1NGJ5bmk5"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/raj-kumawat-681b46378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+              </div>
+          </div>
+
+          <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                  <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
+                  <li><a href="offer-closed.html"><i class="fas fa-chevron-right"></i> Special Offers</a></li>
+                  <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Catering Services</a></li>
+                  <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Gift Cards</a></li>
+                  <li><a href="404.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                  <li><a href="About.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+              </ul>
+          </div>
+
+          <div class="footer-section">
+              <h3>Monthly Specials</h3>
+              <p><i class="fas fa-star"></i> Burger of the Month: Truffle Mushroom</p>
+              <p><i class="fas fa-star"></i> Happy Hour: 4pm-6pm (20% off drinks)</p>
+              <p><i class="fas fa-star"></i> Tuesday: Student Discount Day (15% off)</p>
+              <p><i class="fas fa-star"></i> Weekend Brunch: 10am-3pm</p>
+
+              <div class="newsletter">
+                  <h4>Subscribe for Updates</h4>
+                  <div class="newsletter-input">
+                      <input type="email" placeholder="Your email address">
+                      <a href="About.html"><button class="newsletter-btn">Join</button></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="copyright">
+          <div>
+              &copy; 2023 Cafe Vibe. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #c8a856;"></i> for food lovers created by Raj Kumawat
+          </div>
+          <div class="payment-methods">
+              <i class="fab fa-cc-visa" title="Visa"></i>
+              <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+              <i class="fab fa-cc-amex" title="American Express"></i>
+              <i class="fab fa-cc-paypal" title="PayPal"></i>
+              <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<style>
+:root {
+  --primary-color: #c8a856;
+  --secondary-color: #052b22;
+  --text-color: #195547;
+  --bg-color: #052b22;
+}
+
+.customize-section {
+  background: url('order-page-bg.jpg') center/cover no-repeat;
+  padding: 60px 10%;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin: 50px 0;
+  position: relative;
+  color: #fff;
+}
+
+/* Overlay to make text readable */
+.customize-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 43, 34, 0.5); /* dark overlay */
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.customize-header,
+.customize-container form {
+  position: relative; /* appear above overlay */
+  z-index: 1;
+}
+
+.customize-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.customize-header p {
+  font-size: 16px;
+  color: #f0f0f0;
+  margin-top: 10px;
+}
+
+.customize-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.customize-container form {
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: left;
+  color: var(--text-color);
+}
+
+.customize-group {
+  margin-bottom: 20px;
+}
+
+.customize-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 8px;
+}
+
+.customize-group select,
+.customize-group input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.checkbox-group label {
+  font-weight: 500;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-add {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  padding: 14px 0;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-add:hover {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .customize-container form {
+      padding: 20px;
+  }
+  .checkbox-group {
+      gap: 10px;
+  }
+  .customize-header h2 {
+      font-size: 28px;
+  }
+}
+</style>
+
+</body>
+</html>

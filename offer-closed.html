@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer Ended | New Offers Coming Soon | Burger Joint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url(header-footer.css);
+        h1, h2, h3, h4, h5 {
+            font-family: var(--heading-font);
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Closed Offer Banner */
+        .closed-banner {
+            background-color: #999;
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            font-weight: 600;
+        }
+
+        .closed-banner i {
+            margin-right: 8px;
+        }
+
+        /* Main Content */
+        .main-content {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 0;
+        }
+
+        .status-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .status-icon {
+            font-size: 5rem;
+            color: #999;
+            margin-bottom: 2rem;
+        }
+
+        .status-title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: #999;
+        }
+
+        .status-subtitle {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .status-message {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .countdown-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 700px;
+            margin: 3rem auto;
+        }
+
+        .countdown-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-item {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            min-width: 120px;
+            border: 2px solid var(--accent-color);
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+            color: var(--secondary-color);
+            font-family: var(--font-family);
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-top: 10px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(200, 168, 86, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Coming Soon Teaser */
+        .teaser-section {
+            background-color: var(--section-bg);
+            padding: 5rem 0;
+        }
+
+        .teaser-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .teaser-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .teaser-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .teaser-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .teaser-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .teaser-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .teaser-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        /* Signup Section */
+        .signup-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .signup-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .signup-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .signup-form {
+            margin-top: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-family);
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .form-checkbox input {
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 576px) {
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Closed Offer Banner -->
+    <div class="closed-banner">
+        <i class="fas fa-exclamation-circle"></i> PREVIOUS OFFER HAS ENDED • NEW OFFERS COMING SOON
+    </div>
+
+
+    <!-- header -->
+
+    <nav class="navbar">
+        <div class="flex items-center gap-3">
+            <img src="cofee.jpg" alt="Logo" class="h-12 w-12 rounded-full object-cover">
+            <div class="flex flex-col leading-tight">
+                <span class="font-playfair text-[#c8a856] font-semibold text-sm md:text-base">CAFE</span>
+                <span class="font-playfair text-[#c8a856] font-extrabold text-lg md:text-xl">VERDE BITES</span>
+            </div>
+        </div>
+    
+        <ul class="nav-links hidden md:flex gap-10">
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-house text-white text-xl"></i>
+                <a href="index.html" class="text-white font-medium">Home</a>
+            </li>
+    
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+                <a href="order.html" class="text-white font-medium">Orders</a>
+            </li>
+    
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-utensils text-white text-xl"></i>
+                <a href="menu.html" class="text-white font-medium">Menu</a>
+            </li>
+    
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-white text-xl"></i>
+                <a href="contact.html" class="text-white font-medium">Contact</a>
+            </li>
+        </ul>
+    
+        <div class="hamburger md:hidden flex flex-col cursor-pointer" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="status-container">
+                <div class="status-icon">
+                    <i class="fas fa-hourglass-end"></i>
+                </div>
+
+                <h1 class="status-title">OFFER CLOSED</h1>
+                <h2 class="status-subtitle">New Offers Coming Soon!</h2>
+
+                <p class="status-message">
+                    Our previous special promotion has now ended. Thank you to everyone who participated! 
+                    We're working on exciting new offers that will be even better. Stay tuned for amazing 
+                    discounts and deals coming your way very soon.
+                </p>
+
+                <div class="countdown-container">
+                    <h3 class="countdown-title">Next Offer Launch In:</h3>
+
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">03</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">12</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">45</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">30</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+
+                    <p>Be the first to know when our new offers go live!</p>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="About.html" class="btn btn-primary">NOTIFY ME FIRST</a>
+                    <a href="menu.html" class="btn btn-secondary">VIEW REGULAR MENU</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Coming Soon Teaser -->
+    <section class="teaser-section">
+        <div class="container">
+            <div class="teaser-container">
+                <h2 class="teaser-title">What's Coming Next?</h2>
+                <p>We're preparing some amazing new offers that you won't want to miss. Here's a sneak peek at what's coming:</p>
+                
+                <div class="teaser-grid">
+                    <div class="teaser-card">
+                        <div class="teaser-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3>Mega Discount Day</h3>
+                        <p>Up to 60% off on select menu items for a limited time only.</p>
+                    </div>
+                    
+                    <div class="teaser-card">
+                        <div class="teaser-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Free Gift with Purchase</h3>
+                        <p>Special freebies and surprises with every order above ₹499.</p>
+                    </div>
+                    
+                    <div class="teaser-card">
+                        <div class="teaser-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Group Discounts</h3>
+                        <p>Special rates for groups and family orders. More people, more savings!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signup Section -->
+    <section class="signup-section" id="signup">
+        <div class="container">
+            <div class="signup-container">
+                <h2 class="signup-title">Get Notified First</h2>
+                <p>Be the first to know when our new offers launch. Sign up below and we'll send you an exclusive notification.</p>
+                
+                <div class="signup-form">
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Your name (optional)">
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="notifications" checked>
+                        <label for="notifications">Yes, I want to receive notifications about new offers, discounts, and special promotions from Burger Joint.</label>
+                    </div>
+                    
+                    <a href="menu.html"><button type="submit" class="btn btn-primary" style="width: 100%; max-width: 300px; margin-top: 1.5rem;">
+                        NOTIFY ME WHEN LIVE
+                    </button></a>
+                </div>
+                
+                <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+                    We respect your privacy. You can unsubscribe at any time.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Gourmet Street, Food City, FC 10001</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@cafevibe.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 11am-10pm, Sat-Sun: 10am-11pm</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/918764841243"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rajkumawat.305?igsh=YzM5czQ1NGJ5bmk5"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/raj-kumawat-681b46378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
+                        <li><a href="offer-closed.html"><i class="fas fa-chevron-right"></i> Special Offers</a></li>
+                        <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Catering Services</a></li>
+                        <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Gift Cards</a></li>
+                        <li><a href="404.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                        <li><a href="About.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Monthly Specials</h3>
+                    <p><i class="fas fa-star"></i> Burger of the Month: Truffle Mushroom</p>
+                    <p><i class="fas fa-star"></i> Happy Hour: 4pm-6pm (20% off drinks)</p>
+                    <p><i class="fas fa-star"></i> Tuesday: Student Discount Day (15% off)</p>
+                    <p><i class="fas fa-star"></i> Weekend Brunch: 10am-3pm</p>
+
+                    <div class="newsletter">
+                        <h4>Subscribe for Updates</h4>
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Your email address">
+                            <a href="contact.html"><button class="newsletter-btn">Join</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div>
+                    &copy; 2023 Cafe Vibe. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #c8a856;"></i> for food lovers created by Raj Kumawat
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <i class="fab fa-cc-paypal" title="PayPal"></i>
+                    <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Countdown Timer for Next Offer
+        function updateCountdown() {
+            const launchDate = new Date();
+            launchDate.setDate(launchDate.getDate() + 3);
+            launchDate.setHours(12, 0, 0, 0);
+
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+
+            if (timeLeft < 0) return;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Signup Form Submission
+        document.querySelector('.signup-form button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const emailInput = document.querySelector('.signup-form input[type="email"]');
+            const nameInput = document.querySelector('.signup-form input[type="text"]');
+            
+            if (emailInput.value && emailInput.value.includes('@')) {
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background-color: var(--primary-color);
+                    color: white;
+                    padding: 1rem 1.5rem;
+                    border-radius: 8px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    z-index: 10000;
+                    font-weight: 500;
+                    transition: all 0.3s ease;
+                `;
+                notification.innerHTML = `<i class="fas fa-check-circle"></i> You're on the list! We'll notify you when new offers launch.`;
+                
+                document.body.appendChild(notification);
+
+                emailInput.value = '';
+                nameInput.value = '';
+                
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                    notification.style.transform = 'translateX(100px)';
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 4000);
+            } else {
+                emailInput.style.borderColor = '#ff6b6b';
+                setTimeout(() => {
+                    emailInput.style.borderColor = '#ddd';
+                }, 2000);
+            }
+        });
+    </script>
+
+</body>
+</html>

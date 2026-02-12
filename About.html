@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Haven | About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header-footer.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        h1, h2, h3, h4 {
+            font-family: var(--heading-font);
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(5, 43, 34, 0.85), rgba(5, 43, 34, 0.9)), url('https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            color: white;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--light-bg);
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background-color: var(--section-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 15px auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Burger Specials */
+        .specials-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .specials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .special-item {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .special-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .special-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .special-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .special-item:hover .special-img img {
+            transform: scale(1.05);
+        }
+
+        .special-content {
+            padding: 25px;
+        }
+
+        .special-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .special-content p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.3rem;
+            font-family: var(--heading-font);
+            letter-spacing: 1px;
+        }
+
+        .burger-badge {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Cafe Vibe */
+        .vibe-section {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+
+        .vibe-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .vibe-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .vibe-icon {
+            text-align: center;
+            width: 150px;
+        }
+
+        .vibe-icon i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .vibe-icon h4 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid var(--light-bg);
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member h4 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class="flex items-center gap-3">
+            <img src="cofee.jpg" alt="Logo" class="h-12 w-12 rounded-full object-cover">
+            <div class="flex flex-col leading-tight">
+                <span class="font-playfair text-[#c8a856] font-semibold text-sm md:text-base">CAFE</span>
+                <span class="font-playfair text-[#c8a856] font-extrabold text-lg md:text-xl">VERDE BITES</span>
+            </div>
+        </div>
+    
+        <ul class="nav-links hidden md:flex gap-10">
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-house text-white text-xl"></i>
+                <a href="index.html" class="text-white font-medium">Home</a>
+            </li>
+    
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+                <a href="order.html" class="text-white font-medium">Orders</a>
+            </li>
+    
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-utensils text-white text-xl"></i>
+                <a href="menu.html" class="text-white font-medium">Menu</a>
+            </li>
+    
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-white text-xl"></i>
+                <a href="contact.html" class="text-white font-medium">Contact</a>
+            </li>
+        </ul>
+    
+        <div class="hamburger md:hidden flex flex-col cursor-pointer" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+    <!-- MOBILE MENU -->
+    <ul id="mobile-menu" class="flex flex-col gap-6 text-white text-lg">
+        <li class="flex items-center gap-3">
+            <i class="fa-solid fa-house text-white text-xl"></i>
+            <a href="index.html">Home</a>
+        </li>
+    
+        <li class="flex items-center gap-3">
+            <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+            <a href="order.html">Orders</a>
+        </li>
+    
+        <li class="flex items-center gap-3">
+            <i class="fa-solid fa-utensils text-white text-xl"></i>
+            <a href="menu.html">Menu</a>
+        </li>
+    
+        <li class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-white text-xl"></i>
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>OUR STORY</h1>
+            <p>At <span class="highlight">Burger Haven</span>, we're passionate about crafting the perfect burger experience. From locally-sourced ingredients to our secret family recipes, every bite tells our story of flavor, quality, and community.</p>
+            <p>Founded in 2010, we've been serving smiles between buns for over a decade.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">ABOUT OUR CAFE</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Burger Haven Cafe Interior">
+                </div>
+                <div class="about-text">
+                    <h3>Where Great Burgers & Good Vibes Meet</h3>
+                    <p>Burger Haven started as a small food truck with a big dream: to create the ultimate burger experience. Today, we've grown into a beloved cafe where food lovers gather to enjoy handcrafted burgers, crispy fries, and refreshing beverages in a warm, inviting atmosphere.</p>
+                    <p>Our philosophy is simple: <span class="highlight">quality ingredients, innovative recipes, and genuine hospitality.</span> We source our beef from local farms, bake our buns fresh daily, and create unique sauces that keep our customers coming back.</p>
+                    <p>More than just a cafe, Burger Haven is a community hub where friends meet, families celebrate, and burger enthusiasts discover new favorites. Our rustic-industrial decor, friendly staff, and mouthwatering aromas create an unforgettable dining experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Burger Specials -->
+    <section class="specials-section">
+        <div class="container">
+            <h2 class="section-title">OUR SIGNATURE BURGERS</h2>
+            <div class="specials-container">
+                <div class="special-item">
+                    <div class="special-img">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Classic Haven Burger">
+                    </div>
+                    <div class="special-content">
+                        <div class="burger-badge">BEST SELLER</div>
+                        <h3>Classic Haven Burger</h3>
+                        <p>Our flagship burger featuring a 1/2 lb grass-fed beef patty, aged cheddar, crispy bacon, fresh lettuce, tomato, and our signature Haven sauce on a brioche bun.</p>
+                        <div class="price">$14.99</div>
+                    </div>
+                </div>
+                
+                <div class="special-item">
+                    <div class="special-img">
+                        <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Truffle Mushroom Swiss">
+                    </div>
+                    <div class="special-content">
+                        <div class="burger-badge">GOURMET</div>
+                        <h3>Truffle Mushroom Swiss</h3>
+                        <p>A gourmet delight with truffle-infused beef, sautéed wild mushrooms, melted Swiss cheese, arugula, and truffle aioli on an artisan sourdough bun.</p>
+                        <div class="price">$18.99</div>
+                    </div>
+                </div>
+                
+                <div class="special-item">
+                    <div class="special-img">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Spicy Avocado Chicken">
+                    </div>
+                    <div class="special-content">
+                        <div class="burger-badge">SPICY OPTION</div>
+                        <h3>Spicy Avocado Chicken</h3>
+                        <p>Grilled chicken breast topped with fresh avocado, pepper jack cheese, chipotle mayo, jalapeños, and crisp lettuce on a whole wheat bun.</p>
+                        <div class="price">$16.99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cafe Vibe -->
+    <section class="vibe-section">
+        <div class="container">
+            <h2 class="section-title">THE CAFE VIBE</h2>
+            <div class="vibe-content">
+                <p>At Burger Haven, we believe the atmosphere is just as important as the food. Our cafe is designed to be your home away from home.</p>
+                
+                <div class="vibe-icons">
+                    <div class="vibe-icon">
+                        <i class="fas fa-music"></i>
+                        <h4>Curated Playlists</h4>
+                        <p>Relaxing tunes to enhance your meal</p>
+                    </div>
+                    
+                    <div class="vibe-icon">
+                        <i class="fas fa-coffee"></i>
+                        <h4>Artisan Coffee</h4>
+                        <p>Freshly roasted & brewed daily</p>
+                    </div>
+                    
+                    <div class="vibe-icon">
+                        <i class="fas fa-users"></i>
+                        <h4>Community Tables</h4>
+                        <p>Meet new friends or work remotely</p>
+                    </div>
+                    
+                    <div class="vibe-icon">
+                        <i class="fas fa-seedling"></i>
+                        <h4>Eco-Conscious</h4>
+                        <p>Sustainable packaging & practices</p>
+                    </div>
+                </div>
+                
+                <p>Whether you're here for a quick lunch, a casual dinner, or just a coffee break, our welcoming space and friendly staff ensure you'll leave with a full stomach and a happy heart.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">MEET OUR TEAM</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Alex Morgan">
+                    </div>
+                    <h4>Alex Morgan</h4>
+                    <p>Head Chef & Founder</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w-600&q=80" alt="Sophia Chen">
+                    </div>
+                    <h4>Sophia Chen</h4>
+                    <p>Pastry Chef</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Marcus Rivera">
+                    </div>
+                    <h4>Marcus Rivera</h4>
+                    <p>Grill Master</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Jamie Wilson">
+                    </div>
+                    <h4>Jamie Wilson</h4>
+                    <p>Cafe Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Gourmet Street, Food City, FC 10001</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@cafevibe.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 11am-10pm, Sat-Sun: 10am-11pm</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/918764841243"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/rajkumawat.305?igsh=YzM5czQ1NGJ5bmk5"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/raj-kumawat-681b46378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
+                    <li><a href="offer-closed.html"><i class="fas fa-chevron-right"></i> Special Offers</a></li>
+                    <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Catering Services</a></li>
+                    <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Gift Cards</a></li>
+                    <li><a href="404.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                    <li><a href="About.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Monthly Specials</h3>
+                <p><i class="fas fa-star"></i> Burger of the Month: Truffle Mushroom</p>
+                <p><i class="fas fa-star"></i> Happy Hour: 4pm-6pm (20% off drinks)</p>
+                <p><i class="fas fa-star"></i> Tuesday: Student Discount Day (15% off)</p>
+                <p><i class="fas fa-star"></i> Weekend Brunch: 10am-3pm</p>
+
+                <div class="newsletter">
+                    <h4>Subscribe for Updates</h4>
+                    <div class="newsletter-input">
+                        <input type="email" placeholder="Your email address">
+                        <a href="About.html"><button class="newsletter-btn">Join</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>
+                &copy; 2023 Cafe Vibe. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #c8a856;"></i> for food lovers created by Raj Kumawat
+            </div>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa" title="Visa"></i>
+                <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                <i class="fab fa-cc-amex" title="American Express"></i>
+                <i class="fab fa-cc-paypal" title="PayPal"></i>
+                <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

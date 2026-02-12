@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Delight | Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    @import url(header-footer.css);
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Cafe Hero Section */
+        .cafe-hero {
+            background: linear-gradient(rgba(5, 43, 34, 0.9), rgba(5, 43, 34, 0.85)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 0 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .cafe-hero h1 {
+            font-family: var(--heading-font);
+            font-size: 3.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: var(--light-bg);
+        }
+
+        .cafe-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--light-bg);
+            opacity: 0.9;
+        }
+
+        .cart-icon-large {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Cart Container */
+        .cart-container {
+            padding: 60px 0;
+            background-color: var(--section-bg);
+            min-height: 70vh;
+        }
+
+        .cart-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Cart Items */
+        .cart-items {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .cart-title {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            color: var(--text-color-heero);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 20px;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            align-items: center;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-image i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .item-details h3 {
+            font-family: var(--heading-font);
+            font-size: 1.8rem;
+            color: var(--text-color-heero);
+            margin-bottom: 8px;
+        }
+
+        .item-details p {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Quantity Controls */
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .quantity {
+            font-size: 1.2rem;
+            font-weight: 600;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .remove-item {
+            color: #dc3545;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .remove-item:hover {
+            background-color: rgba(220, 53, 69, 0.1);
+        }
+
+        /* Order Summary */
+        .order-summary {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+
+        .summary-title {
+            font-family: var(--heading-font);
+            font-size: 2.2rem;
+            color: var(--text-color-heero);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .summary-details {
+            margin-bottom: 30px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+
+        .total-row {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            padding-top: 20px;
+            border-top: 2px solid var(--primary-color);
+            margin-top: 10px;
+        }
+
+        /* Cafe Special Offers */
+        .cafe-offers {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .offers-title {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            color: var(--text-color-heero);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .offer-item i {
+            color: var(--primary-color);
+        }
+
+        /* Checkout Button */
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            padding: 16px;
+            border-radius: 10px;
+            font-family: var(--font-family);
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .checkout-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(200, 168, 86, 0.3);
+        }
+
+        .continue-shopping {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .continue-shopping:hover {
+            color: var(--primary-color);
+        }
+
+        /* Empty Cart */
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .empty-cart i {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .empty-cart h2 {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            color: var(--text-color-heero);
+            margin-bottom: 15px;
+        }
+
+        .empty-cart p {
+            color: var(--text-color);
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cafe Vibes Elements */
+        .cafe-vibe-tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .cafe-icon {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .cart-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .order-summary {
+                position: static;
+            }
+            
+            .cafe-hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cart-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .item-image {
+                margin: 0 auto;
+            }
+            
+            .quantity-controls {
+                justify-content: center;
+            }
+            
+            .cafe-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cart-container {
+                padding: 40px 0;
+            }
+            
+            .cart-items, .order-summary {
+                padding: 20px;
+            }
+            
+            .cafe-hero {
+                padding: 40px 0 30px;
+            }
+            
+            .cafe-hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .cart-title, .summary-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+          <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="flex items-center gap-3">
+        <img src="cofee.jpg" alt="Logo" class="h-12 w-12 rounded-full object-cover">
+        <div class="flex flex-col leading-tight">
+            <span class="font-playfair text-[#c8a856] font-semibold text-sm md:text-base">CAFE</span>
+            <span class="font-playfair text-[#c8a856] font-extrabold text-lg md:text-xl">VERDE BITES</span>
+        </div>
+    </div>
+
+    <ul class="nav-links hidden md:flex gap-10">
+        <li class="flex items-center gap-2">
+            <i class="fa-solid fa-house text-white text-xl"></i>
+            <a href="index.html" class="text-white font-medium">Home</a>
+        </li>
+
+        <li class="flex items-center gap-2">
+            <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+            <a href="order.html" class="text-white font-medium">Orders</a>
+        </li>
+
+        <li class="flex items-center gap-2">
+            <i class="fa-solid fa-utensils text-white text-xl"></i>
+            <a href="menu.html" class="text-white font-medium">Menu</a>
+        </li>
+
+        <li class="flex items-center gap-2">
+            <i class="fa-solid fa-phone text-white text-xl"></i>
+            <a href="contact.html" class="text-white font-medium">Contact</a>
+        </li>
+    </ul>
+
+    <div class="hamburger md:hidden flex flex-col cursor-pointer" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<ul id="mobile-menu" class="flex flex-col gap-6 text-white text-lg">
+    <li class="flex items-center gap-3">
+        <i class="fa-solid fa-house text-white text-xl"></i>
+        <a href="index.html">Home</a>
+    </li>
+
+    <li class="flex items-center gap-3">
+        <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+        <a href="order.html">Orders</a>
+    </li>
+
+    <li class="flex items-center gap-3">
+        <i class="fa-solid fa-utensils text-white text-xl"></i>
+        <a href="menu.html">Menu</a>
+    </li>
+
+    <li class="flex items-center gap-3">
+        <i class="fa-solid fa-phone text-white text-xl"></i>
+        <a href="contact.html">Contact</a>
+    </li>
+</ul>
+    <!-- Cafe Hero Section -->
+    <section class="cafe-hero">
+        <div class="container">
+            <div class="cart-icon-large">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h1>Your Cafe Cart <span class="cafe-vibe-tag">Cafe Vibe</span></h1>
+            <p>Artisan coffee, fresh pastries, and cozy moments await in your cart</p>
+        </div>
+    </section>
+
+    <!-- Cart Container -->
+    <section class="cart-container">
+        <div class="container">
+            <div class="cart-wrapper">
+                <!-- Cart Items Section -->
+                <div class="cart-items">
+                    <h2 class="cart-title"><i class="fas fa-mug-hot cafe-icon"></i> Your Selections</h2>
+                    
+                    <!-- Cart Item 1 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <div class="item-details">
+                            <h3>Artisan Cappuccino <span class="cafe-vibe-tag">Bestseller</span></h3>
+                            <p>Single-origin espresso with velvety steamed milk and cocoa dusting</p>
+                            <div class="item-price">₹220</div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" data-item="cappuccino">-</button>
+                            <span class="quantity" data-item="cappuccino">2</span>
+                            <button class="quantity-btn plus" data-item="cappuccino">+</button>
+                            <button class="remove-item" data-item="cappuccino">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Item 2 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <i class="fas fa-bread-slice"></i>
+                        </div>
+                        <div class="item-details">
+                            <h3>Avocado Toast</h3>
+                            <p>Sourdough bread with smashed avocado, cherry tomatoes, and microgreens</p>
+                            <div class="item-price">₹320</div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" data-item="avocado-toast">-</button>
+                            <span class="quantity" data-item="avocado-toast">1</span>
+                            <button class="quantity-btn plus" data-item="avocado-toast">+</button>
+                            <button class="remove-item" data-item="avocado-toast">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Item 3 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <i class="fas fa-cookie-bite"></i>
+                        </div>
+                        <div class="item-details">
+                            <h3>Chocolate Croissant</h3>
+                            <p>Buttery, flaky croissant with rich dark chocolate filling</p>
+                            <div class="item-price">₹180</div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" data-item="croissant">-</button>
+                            <span class="quantity" data-item="croissant">3</span>
+                            <button class="quantity-btn plus" data-item="croissant">+</button>
+                            <button class="remove-item" data-item="croissant">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Item 4 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <i class="fas fa-ice-cream"></i>
+                        </div>
+                        <div class="item-details">
+                            <h3>Affogato <span class="cafe-vibe-tag">Seasonal</span></h3>
+                            <p>Vanilla bean gelato drowned in a shot of hot espresso</p>
+                            <div class="item-price">₹280</div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" data-item="affogato">-</button>
+                            <span class="quantity" data-item="affogato">1</span>
+                            <button class="quantity-btn plus" data-item="affogato">+</button>
+                            <button class="remove-item" data-item="affogato">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2 class="summary-title"><i class="fas fa-receipt cafe-icon"></i> Order Summary</h2>
+                    
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal (4 items)</span>
+                            <span>₹1,000</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Service Charge</span>
+                            <span>₹50</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>GST (5%)</span>
+                            <span>₹52.50</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery Fee</span>
+                            <span>₹40</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Total Amount</span>
+                            <span>₹1,142.50</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Cafe Offers -->
+                    <div class="cafe-offers">
+                        <h3 class="offers-title"><i class="fas fa-tag"></i> Cafe Specials</h3>
+                        <div class="offer-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free delivery on orders above ₹500</span>
+                        </div>
+                        <div class="offer-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Buy 5 coffees, get 1 free</span>
+                        </div>
+                        <div class="offer-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>10% off on pastries after 3 PM</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Checkout Button -->
+                    <button class="checkout-btn">
+                        <i class="fas fa-lock"></i> Proceed to Checkout
+                    </button>
+                    
+                    <a href="menu.html" class="continue-shopping">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Gourmet Street, Food City, FC 10001</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@cafevibe.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 11am-10pm, Sat-Sun: 10am-11pm</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/918764841243"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rajkumawat.305?igsh=YzM5czQ1NGJ5bmk5"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/raj-kumawat-681b46378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
+                        <li><a href="offer-closed.html"><i class="fas fa-chevron-right"></i> Special Offers</a></li>
+                        <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Catering Services</a></li>
+                        <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Gift Cards</a></li>
+                        <li><a href="404.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                        <li><a href="About.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Monthly Specials</h3>
+                    <p><i class="fas fa-star"></i> Burger of the Month: Truffle Mushroom</p>
+                    <p><i class="fas fa-star"></i> Happy Hour: 4pm-6pm (20% off drinks)</p>
+                    <p><i class="fas fa-star"></i> Tuesday: Student Discount Day (15% off)</p>
+                    <p><i class="fas fa-star"></i> Weekend Brunch: 10am-3pm</p>
+
+                    <div class="newsletter">
+                        <h4>Subscribe for Updates</h4>
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Your email address">
+                            <a href="About.html"><button class="newsletter-btn">Join</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div>
+                    &copy; 2023 Cafe Vibe. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #c8a856;"></i> for food lovers created by Raj Kumawat
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <i class="fab fa-cc-paypal" title="PayPal"></i>
+                    <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const quantityButtons = document.querySelectorAll('.quantity-btn');
+            const removeButtons = document.querySelectorAll('.remove-item');
+            
+            // Update quantity
+            quantityButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const item = this.getAttribute('data-item');
+                    const quantityElement = document.querySelector(`.quantity[data-item="${item}"]`);
+                    let quantity = parseInt(quantityElement.textContent);
+                    
+                    if (this.classList.contains('plus')) {
+                        quantity++;
+                    } else if (this.classList.contains('minus') && quantity > 1) {
+                        quantity--;
+                    }
+                    
+                    quantityElement.textContent = quantity;
+                    updateCartTotal();
+                });
+            });
+            
+            // Remove item
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const item = this.getAttribute('data-item');
+                    const cartItem = document.querySelector(`.cart-item:has(.quantity[data-item="${item}"])`);
+                    
+                    // Add animation
+                    cartItem.style.transition = 'all 0.3s';
+                    cartItem.style.opacity = '0';
+                    cartItem.style.transform = 'translateX(-20px)';
+                    
+                    setTimeout(() => {
+                        cartItem.remove();
+                        updateCartTotal();
+                        checkEmptyCart();
+                    }, 300);
+                });
+            });
+            
+            // Update cart total
+            function updateCartTotal() {
+                // In a real application, this would calculate based on actual prices
+                console.log('Cart updated');
+            }
+            
+            // Check if cart is empty
+            function checkEmptyCart() {
+                const cartItems = document.querySelectorAll('.cart-item');
+                if (cartItems.length === 0) {
+                    showEmptyCart();
+                }
+            }
+            
+            // Show empty cart message
+            function showEmptyCart() {
+                const cartContainer = document.querySelector('.cart-container .container');
+                cartContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-mug-hot"></i>
+                        <h2>Your Cafe Cart is Empty</h2>
+                        <p>Looks like you haven't added any delicious coffee or pastries to your cart yet. Browse our menu and discover artisan brews and fresh baked goods.</p>
+                        <a href="#" class="checkout-btn" style="max-width: 300px; margin: 0 auto;">
+                            <i class="fas fa-utensils"></i> Explore Our Menu
+                        </a>
+                    </div>
+                `;
+            }
+            
+            // Checkout button
+            const checkoutBtn = document.querySelector('.checkout-btn');
+            checkoutBtn.addEventListener('click', function() {
+                // Animation
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                this.disabled = true;
+                
+                // Simulate checkout process
+                setTimeout(() => {
+                    alert('Order placed successfully! Your coffee and pastries will be ready soon.');
+                    this.innerHTML = '<i class="fas fa-lock"></i> Proceed to Checkout';
+                    this.disabled = false;
+                }, 1500);
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

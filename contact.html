@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Roasted Bean | Contact page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="contect.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="flex items-center gap-3">
+            <img src="cofee.jpg" alt="Logo" class="h-12 w-12 rounded-full object-cover">
+            <div class="flex flex-col leading-tight">
+                <span class="font-playfair text-[#c8a856] font-semibold text-sm md:text-base">CAFE</span>
+                <span class="font-playfair text-[#c8a856] font-extrabold text-lg md:text-xl">VERDE BITES</span>
+            </div>
+        </div>
+
+        <ul class="nav-links hidden md:flex gap-10">
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-house text-white text-xl"></i>
+                <a href="index.html" class="text-white font-medium">Home</a>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+                <a href="order.html" class="text-white font-medium">Orders</a>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-utensils text-white text-xl"></i>
+                <a href="menu.html" class="text-white font-medium">Menu</a>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-white text-xl"></i>
+                <a href="contact.html" class="text-white font-medium">Contact</a>
+            </li>
+        </ul>
+
+        <div class="hamburger md:hidden flex flex-col cursor-pointer" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU - SIRF EK BAAR -->
+    <ul id="mobile-menu" class="flex flex-col gap-6 text-white text-lg">
+        <li class="flex items-center gap-3">
+            <i class="fa-solid fa-house text-white text-xl"></i>
+            <a href="index.html">Home</a>
+        </li>
+        <li class="flex items-center gap-3">
+            <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+            <a href="order.html">Orders</a>
+        </li>
+        <li class="flex items-center gap-3">
+            <i class="fa-solid fa-utensils text-white text-xl"></i>
+            <a href="menu.html">Menu</a>
+        </li>
+        <li class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-white text-xl"></i>
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+
+    <!-- Decorative elements -->
+    <div class="coffee-stain stain-1"></div>
+    <div class="coffee-stain stain-2"></div>
+    <div class="coffee-bean bean-1"></div>
+    <div class="coffee-bean bean-2"></div>
+    <div class="coffee-bean bean-3"></div>
+    <div class="coffee-bean bean-4"></div>
+
+    <div class="container">
+        <!-- Cafe Header -->
+        <div class="cafe-header">
+            <div class="cafe-logo">
+                <div class="logo-icon pulse">
+                    <i class="fas fa-coffee"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>The Roasted Bean</h1>
+                    <span>Cafe & Roastery</span>
+                </div>
+            </div>
+            <div class="cafe-tagline">
+                <p>"Where every cup is brewed with passion and every moment is worth savoring."</p>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-coffee"></i>
+                    <h3>Our Cozy Corner</h3>
+                    <p>The perfect spot for conversations, work, or quiet reflection</p>
+                </div>
+            </div>
+            <div class="hero-content">
+                <h2>Let's <span>Connect</span> Over Coffee</h2>
+                <p>At The Roasted Bean, we believe that great conversations start with great coffee. Whether you have
+                    questions about our beans, want to book our space for an event, or just want to say hello, we're
+                    always here to chat.</p>
+                <p>Our doors are open seven days a week, and our virtual doors are always open. Reach out to us through
+                    any of the channels below, or stop by for a freshly brewed cup and a warm smile.</p>
+            </div>
+        </div>
+
+        <!-- Contact Information & Form - FIXED -->
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Our Contact Details</h2>
+
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-content">
+                        <h3>Visit Our Location</h3>
+                        <p>Jaipur, Rajasthan<br>India</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="info-content">
+                        <h3>Call Us</h3>
+                        <p>8764841243</p>
+                        <p style="font-size: 0.9rem; color: var(--primary-color); margin-top: 5px;">Available Mon-Sat,
+                            10AM - 7PM</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-content">
+                        <h3>Email Us</h3>
+                        <p>rklogixtech@gmail.com</p>
+                        <p style="font-size: 0.9rem; color: var(--primary-color); margin-top: 5px;">We reply within 24
+                            hours</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="info-content">
+                        <h3>Business Hours</h3>
+                        <p><strong>Monday-Friday:</strong> 9:00 AM - 8:00 PM</p>
+                        <p><strong>Saturday:</strong> 10:00 AM - 6:00 PM</p>
+                        <p><strong>Sunday:</strong> Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT FORM - SIRF EK BAAR, FIXED -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm" onsubmit="return sendEmail()">
+                    <div class="form-group">
+                        <label>Your Name *</label>
+                        <input type="text" id="name" required placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" id="email" required placeholder="youremail@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Your contact number">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <select id="subject">
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Project Discussion">Project Discussion</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="Business Collaboration">Business Collaboration</option>
+                            <option value="Training & Consultation">Training & Consultation</option>
+                            <option value="Catering Inquiry">Catering Inquiry</option>
+                            <option value="Wholesale Coffee Beans">Wholesale Coffee Beans</option>
+                            <option value="Private Event Booking">Private Event Booking</option>
+                            <option value="Feedback & Suggestions">Feedback & Suggestions</option>
+                            <option value="Career Opportunity">Career Opportunity</option>
+                            <option value="Partnership">Partnership</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Message *</label>
+                        <textarea id="message" rows="6" required placeholder="Tell us..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Cafe Gallery -->
+        <h2
+            style="font-size: 2.2rem; color: var(--secondary-color); margin-bottom: 30px; text-align: center; font-family: 'Playfair Display', serif;">
+            Our Cafe Atmosphere</h2>
+        <div class="cafe-gallery">
+            <div class="gallery-item">
+                <div class="gallery-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=2078&auto=format&fit=crop');">
+                </div>
+                <div class="gallery-overlay">
+                    <h4>Cozy Interior</h4>
+                    <p>Warm lighting & comfortable seating</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=2067&auto=format&fit=crop');">
+                </div>
+                <div class="gallery-overlay">
+                    <h4>Freshly Roasted Beans</h4>
+                    <p>Daily roasting on-site</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1516733968668-dbdce39c4651?q=80&w=2070&auto=format&fit=crop');">
+                </div>
+                <div class="gallery-overlay">
+                    <h4>Artisan Brewing</h4>
+                    <p>Precision and care in every cup</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1463797221720-6b07e6426c24?q=80&w=2071&auto=format&fit=crop');">
+                </div>
+                <div class="gallery-overlay">
+                    <h4>Outdoor Seating</h4>
+                    <p>Garden patio for sunny days</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+            <div class="map-header">
+                <h2>Find Our Location</h2>
+                <i class="fas fa-map-signs"></i>
+            </div>
+            <div class="map-placeholder">
+                <div class="map-content">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <div class="map-text">
+                        <h3>123 Coffee Street, Brew District, NY 10001</h3>
+                        <p>We're located in the heart of the Brew District, just two blocks from Central Park. Look for
+                            our signature green awning and the aroma of freshly roasted coffee.</p>
+                        <p style="margin-top: 15px; color: var(--primary-color); font-weight: 600;">
+                            <i class="fas fa-subway"></i> Subway: A, C, E to 42nd Street<br>
+                            <i class="fas fa-parking"></i> Street parking available (metered)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cafe Signoff -->
+        <div class="cafe-signoff">
+            <div class="signoff-text">
+                "We don't just serve coffee; we serve experiences. Each cup tells a story of careful sourcing, artisanal
+                roasting, and passionate brewing. Come be part of our story."
+            </div>
+            <div class="signoff-author">
+                — The Roasted Bean Team
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Gourmet Street, Food City, FC 10001</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@cafevibe.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 11am-10pm, Sat-Sun: 10am-11pm</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/918764841243"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rajkumawat.305?igsh=YzM5czQ1NGJ5bmk5"><i
+                                class="fab fa-instagram"></i></a>
+                        <a
+                            href="https://www.linkedin.com/in/raj-kumawat-681b46378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
+                        <li><a href="offer-closed.html"><i class="fas fa-chevron-right"></i> Special Offers</a></li>
+                        <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Catering Services</a></li>
+                        <li><a href="Services.html"><i class="fas fa-chevron-right"></i> Gift Cards</a></li>
+                        <li><a href="404.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                        <li><a href="About.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Monthly Specials</h3>
+                    <p><i class="fas fa-star"></i> Burger of the Month: Truffle Mushroom</p>
+                    <p><i class="fas fa-star"></i> Happy Hour: 4pm-6pm (20% off drinks)</p>
+                    <p><i class="fas fa-star"></i> Tuesday: Student Discount Day (15% off)</p>
+                    <p><i class="fas fa-star"></i> Weekend Brunch: 10am-3pm</p>
+
+                    <div class="newsletter">
+                        <h4>Subscribe for Updates</h4>
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Your email address">
+                            <button class="newsletter-btn">Join</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div>
+                    &copy; 2023 Cafe Vibe. All rights reserved. | Crafted with <i class="fas fa-heart"
+                        style="color: #c8a856;"></i> for food lovers created by Raj Kumawat
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <i class="fab fa-cc-paypal" title="PayPal"></i>
+                    <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        // ===========================================
+        // 🔥 FINAL FIXED CODE - GUARANTEED WORKING 🔥
+        // ===========================================
+
+        // EmailJS initialize
+        emailjs.init("JIKRh-Pdei2cQm_Zh");
+
+        // Form submit handler
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contactForm');
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Get values
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim() || 'Not provided';
+                    const subject = document.getElementById('subject').value || 'General Inquiry';
+                    const message = document.getElementById('message').value.trim();
+
+                    // Validation
+                    if (!name || !email || !message) {
+                        alert('❌ Name, Email aur Message sab bharna hai!');
+                        return;
+                    }
+
+                    // Loading
+                    const btn = document.getElementById('submitBtn');
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+                    // ========== 📧 EMAIL SEND - CORRECT TEMPLATE ==========
+                    emailjs.send(
+                        "service_6qom5ml",      // Service ID
+                        "template_b3r3fy9",     // ✅✅✅ TERI JO TEST ME CHALI THI - YAHI SAHI HAI!
+                        {
+                            from_name: name,
+                            from_email: email,
+                            from_phone: phone,
+                            subject: subject,
+                            message: message,
+                            to_email: "rklogixtech@gmail.com"
+                        }
+                    )
+                        .then(function (response) {
+                            alert('✅✅✅ EMAIL SEND HO GAYA!\n\nCheck karo: rklogixtech@gmail.com');
+                            form.reset();
+                        })
+                        .catch(function (error) {
+                            alert('❌❌❌ ERROR: ' + (error.text || 'Kuch gadbad hai!'));
+                            console.error(error);
+                        })
+                        .finally(function () {
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                        });
+                });
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
