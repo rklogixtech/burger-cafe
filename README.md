@@ -13,10 +13,4 @@ A modern, responsive website for burger cafes featuring an appetizing menu displ
 - HTML5
 - CSS3 
 - JavaScript
-- [Aur jo bhi use kiya ho]
-
-## 📱 Live Demo
-[Link - agar deploy kiya hai toh]
-
-## 📸 Screenshots
-[Add screenshots here]
+-taildwind
