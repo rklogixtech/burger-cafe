@@ -399,12 +399,12 @@
                             to_email: "rklogixtech@gmail.com"
                         }
                     )
-                        .then(function (response) {
-                            alert('✅✅✅ EMAIL SEND HO GAYA!\n\nCheck karo: rklogixtech@gmail.com');
+                       .then(function (response) {
+                            alert('✅✅✅ EMAIL SENT SUCCESSFULLY!\n\nPlease check: rklogixtech@gmail.com');
                             form.reset();
                         })
                         .catch(function (error) {
-                            alert('❌❌❌ ERROR: ' + (error.text || 'Kuch gadbad hai!'));
+                            alert('❌❌❌ ERROR: ' + (error.text || 'Something went wrong!'));
                             console.error(error);
                         })
                         .finally(function () {
@@ -417,5 +417,6 @@
     </script>
     <script src="script.js"></script>
 </body>
+
 
 </html>
