@@ -1,2 +1,22 @@
-# burger-cafe
-Welcome to **The Bulltower**, a modern and professional trading platform built for stock market learners and active traders.
+# 🍔 Burger Cafe Website
+
+A modern, responsive website for burger cafes featuring an appetizing menu display, online ordering system, and seamless user experience.
+
+## ✨ Features
+- Responsive design that works on all devices
+- Interactive menu with mouth-watering visuals  
+- Easy online ordering functionality
+- Clean, cafe-appropriate color scheme
+- Fast loading performance
+
+## 🛠️ Built With
+- HTML5
+- CSS3 
+- JavaScript
+- [Aur jo bhi use kiya ho]
+
+## 📱 Live Demo
+[Link - agar deploy kiya hai toh]
+
+## 📸 Screenshots
+[Add screenshots here]
